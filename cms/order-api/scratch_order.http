@@ -1,0 +1,140 @@
+### 상품 추가
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MDg4MTg4LCJleHAiOjE2NzUxNzQ1ODh9.nnsYeywQvSEgT3egjpecWImcqan_Z9wjWv6NGAVa12A
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "count": 1,
+      "name": "230",
+      "price": 10000
+    }
+  ],
+  "name": "nike 에어포스"
+}
+
+### 상품 아이템 추가
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MDg4MTg4LCJleHAiOjE2NzUxNzQ1ODh9.nnsYeywQvSEgT3egjpecWImcqan_Z9wjWv6NGAVa12A
+
+{
+  "productId" : 6,
+  "count": 1,
+  "name": "240",
+  "price": 10000
+}
+
+### 상품 수정
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MTQyMzY3LCJleHAiOjE2NzUyMjg3Njd9.Y-Pe7Svtf4dQxUkXpMh_2n4RUhRH1jIR7KMOoU4ctvc
+
+{
+  "id": 1,
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "230",
+      "price": 10000
+    }
+  ],
+  "name": "나이키 에어포스 한정판"
+}
+
+### 상품 아이템 수정
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MTQyMzY3LCJleHAiOjE2NzUyMjg3Njd9.Y-Pe7Svtf4dQxUkXpMh_2n4RUhRH1jIR7KMOoU4ctvc
+
+{
+  "id" : 2,
+  "count": 123,
+  "name": "235",
+  "price": 10000
+}
+
+### 상품 삭제
+DELETE http://localhost:8082/seller/product?id=6
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MTQyMzY3LCJleHAiOjE2NzUyMjg3Njd9.Y-Pe7Svtf4dQxUkXpMh_2n4RUhRH1jIR7KMOoU4ctvc
+
+### 상품 아이템 삭제
+DELETE http://localhost:8082/seller/product/item?id=12
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MTQyMzY3LCJleHAiOjE2NzUyMjg3Njd9.Y-Pe7Svtf4dQxUkXpMh_2n4RUhRH1jIR7KMOoU4ctvc
+
+### 상품 검색
+GET http://localhost:8082/search/product?name=nike
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET http://localhost:8082/search/product/detail?productId=8
+Content-Type: application/json
+
+### 장바구니 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
+
+{
+  "description": "신발입니다.",
+  "id": 1,
+  "items": [
+    {
+      "id": 1,
+      "count": 3,
+      "name": "nike 에어포스0",
+      "price": 10000
+    },
+    {
+      "id": 2,
+      "count": 4,
+      "name": "nike 에어포스1",
+      "price": 10000
+    }
+  ],
+  "name": "nike 에어포스",
+  "sellerId": 1
+}
+
+### 카트 조회
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
+
+### 카트 주문
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJocjRMaEFObVZMYmYvc0JlZmdudnJ4M3Q2N0xMWUllVjNRTW8xYmtJK29NPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUzMjg3NTIsImV4cCI6MTY3NTQxNTE1Mn0.YLMB3qg0S1FA4bR-P_Fgc63T6F8xT0TPjPbXz0mYfUc
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "nike 에어포스",
+      "description": "신발입니다.",
+      "items": [
+        {
+          "id": 1,
+          "count": 3,
+          "name": "nike 에어포스0",
+          "price": 10000
+        },
+        {
+          "id": 2,
+          "count": 4,
+          "name": "nike 에어포스1",
+          "price": 10000
+        }
+      ]
+    }
+  ],
+  "messages": []
+}
